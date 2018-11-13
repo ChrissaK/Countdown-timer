@@ -46,7 +46,8 @@ function makeButtonsFunctional(){
     if (vid.play()){
       vid.pause();
     }
-    window.open("Fireworks-wang/index.html");
+    window.open("https://github.com/ChrissaK/Countdown-timer/blob/gh-pages/Fireworks-wang/index.html");
+    //window.open("Fireworks-wang/index.html");
     //window.open("/Fireworks-master/index.html");
   };
 
