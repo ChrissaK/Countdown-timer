@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("Nov 14, 2018 00:00:00").getTime();
+var countDownDate = new Date("Nov 13, 2018 12:06:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -17,20 +17,45 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("timer").innerHTML = days + "d : " + hours + "h : "
+  + minutes + "m : " + seconds + "s  ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
+    document.getElementById("timer").innerHTML = "00d : 00h : 00m : 00s";
+    document.getElementById("bigDay").innerHTML = "Happy Birthday, Le mou!!!!";
+    document.getElementById("patience").innerHTML = "";
+    video = document.getElementById("bdayVideo");
+    video.innerHTML = '<video id="myVideo" width="560" height="315" autoplay controls><source src="media/happy_bday.mp4">Video tag is not supported.</video>';
+    // d.outerHTML = '<iframe width="560" height="315" frameborder="0" src="https://www.youtube.com/embed/RTVNvC_-Jkk?autoplay=1" allowfullscreen></iframe>';
+    buttons = document.getElementById("buttons");
+    buttons.innerHTML = '<button id="PresentBtn" class="myButton">Present</button><button id="SurpriseBtn" class="myButton">Surprise</button>';
   }
 }, 1000);
 
 //*******************************************//
 // Button function
 function openFireworks(){
-  window.open("/Fireworks-master/index.html");
+  vid = document.getElementById("myVideo");
+  console.log(vid);
+  if (vid.play()){
+    vid.pause();
+  }
+  window.open("/Fireworks-wang/index.html");
+  //window.open("/Fireworks-master/index.html");
 };
-var button = document.getElementById("myButton");
-button.addEventListener("click",openFireworks, false);
+
+function openYouTubeVideo(){
+  vid = document.getElementById("myVideo");
+  console.log(vid);
+  if (vid.play()){
+    vid.pause();
+  }
+  window.open("https://www.youtube.com/embed/u7zgEXKHYvk");
+};
+var surprise_button = document.getElementById("SurpriseBtn");
+surprise_button.addEventListener("click",openFireworks, false);
+
+var present_button = document.getElementById("PresentBtn");
+present_button.addEventListener("click",openYouTubeVideo, false);
